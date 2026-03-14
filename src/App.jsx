@@ -16,7 +16,7 @@ function App() {
     setdisabled(true)
     settext('Thinking...')
     setinput('')
-    var request=await axios.post('http://10.0.0.65:1000/request',{message:input})
+    var request=await axios.post('https://aivora-backend-nkcx.onrender.com/request',{message:input})
     setchats(prev=>[...prev,{type:'bot',text:request.data.response}])
         setdisabled(false)
         settext('Get answer')
