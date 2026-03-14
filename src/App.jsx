@@ -16,7 +16,7 @@ function App() {
     setdisabled(true)
     settext('Thinking...')
     setinput('')
-    var request=await axios.post('https://aivora-backend-nkcx.onrender.com/request',{message:input})
+    var request=await axios.post('http://10.0.0.65:1000/request',{message:input})
     setchats(prev=>[...prev,{type:'bot',text:request.data.response}])
         setdisabled(false)
         settext('Get answer')
@@ -43,10 +43,11 @@ function App() {
 
       </section>
       <div id='input'>
-        <input onChange={(e)=>{setinput(e.target.value)}} placeholder='Try writing something...' id='inp' type='text'></input>
+        <input value={input} onChange={(e)=>{setinput(e.target.value)}} placeholder='Try writing something...' id='inp' type='text'></input>
         <button disabled={disabled} onClick={submit} id='submit'>{text}</button>
       </div>
       </section>
+      <footer>Copyright © 2026 Jasmeh Singh</footer>
     </>
   )
 }
