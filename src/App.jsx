@@ -42,6 +42,9 @@ function App() {
   }
   function listen(){
 const SpeechRecognition=window.SpeechRecognition || window.webkitSpeechRecognition;
+  if(!SpeechRecognition){
+  alert('Tera phone kharab hai')
+}
 const recognition = new SpeechRecognition() 
 recognition.lang = "en-US";
 recognition.onresult=(event)=>{
