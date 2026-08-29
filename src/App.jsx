@@ -41,7 +41,8 @@ function App() {
 
   }
   function listen(){
-const recognition = new webkitSpeechRecognition();
+const SpeechRecognition=window.SpeechRecognition || window.webkitSpeechRecognition;
+const recognition = new SpeechRecognition() 
 recognition.lang = "en-US";
 recognition.onresult=(event)=>{
   const txt= event.results[0][0].transcript;
